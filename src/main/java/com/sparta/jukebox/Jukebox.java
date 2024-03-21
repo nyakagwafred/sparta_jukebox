@@ -1,4 +1,4 @@
-package com.mycompany.jukebox;
+package com.sparta.jukebox;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -44,6 +44,11 @@ public class Jukebox extends JFrame implements ActionListener {
         if (e.getSource() == checkBtn) {
             new CheckLibrary();
         } 
+        else if (e.getSource() == playlistBtn) {
+            //System.out.println(e.getSource());
+            CreatePlaylist Obj = new CreatePlaylist();
+            Obj.setVisible(true);
+        }
         else if (e.getSource() == quitBtn) {
             LibraryData.close();
             System.exit(0);

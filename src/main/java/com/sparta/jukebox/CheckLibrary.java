@@ -1,4 +1,4 @@
-package com.mycompany.jukebox;
+package com.sparta.jukebox;
 
 import java.awt.*;
 import java.awt.event.*;

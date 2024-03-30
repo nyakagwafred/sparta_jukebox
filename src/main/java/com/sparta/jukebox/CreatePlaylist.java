@@ -15,10 +15,13 @@ public class CreatePlaylist extends javax.swing.JFrame {
     /**
      * Creates new form CreatePlaylist
      */
+    
+    
     public CreatePlaylist() {
-        System.out.println("Loaded");
-        allTracksTextArea.setText("Loading");
+        //System.out.println("Loaded");
+        //allTracksTextArea.setText("Loading");
         initComponents();
+        allTracksTextArea.setText(LibraryData.listAll());
     }
 
     /**
@@ -31,16 +34,16 @@ public class CreatePlaylist extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        textArea1 = new java.awt.TextArea();
-        selectedTrackTxtArea = new java.awt.List();
+        playlistTxtArea = new java.awt.TextArea();
         jLabel2 = new javax.swing.JLabel();
-        selectedTrackNumber = new java.awt.TextField();
+        trackNoTxtFld = new java.awt.TextField();
         allTracksTextArea = new java.awt.TextArea();
         clearPlaylistBtn = new javax.swing.JButton();
         checkTrackBtn = new javax.swing.JButton();
         addTrackToPlaylist = new javax.swing.JButton();
         removeSelectedTrackBtn = new javax.swing.JButton();
         exitPlaylistBtn = new javax.swing.JButton();
+        selectedTrackTxtArea = new java.awt.TextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,17 +51,38 @@ public class CreatePlaylist extends javax.swing.JFrame {
 
         jLabel2.setText("All Tracks");
 
-        selectedTrackNumber.addActionListener(new java.awt.event.ActionListener() {
+        trackNoTxtFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selectedTrackNumberActionPerformed(evt);
+                trackNoTxtFldActionPerformed(evt);
+            }
+        });
+
+        allTracksTextArea.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                allTracksTextAreaComponentShown(evt);
             }
         });
 
         clearPlaylistBtn.setText("Clear Playlist");
+        clearPlaylistBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearPlaylistBtnActionPerformed(evt);
+            }
+        });
 
         checkTrackBtn.setText("Check track");
+        checkTrackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTrackBtnActionPerformed(evt);
+            }
+        });
 
         addTrackToPlaylist.setText("Add Track to Playlist");
+        addTrackToPlaylist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addTrackToPlaylistActionPerformed(evt);
+            }
+        });
 
         removeSelectedTrackBtn.setText("Remove Track");
 
@@ -75,18 +99,18 @@ public class CreatePlaylist extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(selectedTrackTxtArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(exitPlaylistBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(textArea1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(selectedTrackTxtArea, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(playlistTxtArea, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(136, 136, 136)
-                                        .addComponent(selectedTrackNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(trackNoTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(checkTrackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -97,7 +121,7 @@ public class CreatePlaylist extends javax.swing.JFrame {
                                 .addComponent(removeSelectedTrackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(clearPlaylistBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,68 +134,87 @@ public class CreatePlaylist extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkTrackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(selectedTrackNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(trackNoTxtFld, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(selectedTrackTxtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addComponent(selectedTrackTxtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addTrackToPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(removeSelectedTrackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(clearPlaylistBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
-                .addComponent(textArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(playlistTxtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addComponent(exitPlaylistBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void selectedTrackNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedTrackNumberActionPerformed
+    private void trackNoTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackNoTxtFldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_selectedTrackNumberActionPerformed
+    }//GEN-LAST:event_trackNoTxtFldActionPerformed
 
     private void exitPlaylistBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitPlaylistBtnActionPerformed
         // TODO add your handling code here:
            dispose();
     }//GEN-LAST:event_exitPlaylistBtnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+    private void checkTrackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTrackBtnActionPerformed
+        // TODO add your handling code here:
+            String selectedTrackNumber = trackNoTxtFld.getText();
+            
+            String name = LibraryData.getName(selectedTrackNumber);
+            //System.out.println(name);
+            if (name == null) {
+                //information.setText(" No such track number");
+                selectedTrackTxtArea.setText("No such track number");
+            } else {
+                selectedTrackTxtArea.setText(name + " - " + LibraryData.getArtist(selectedTrackNumber));
+                selectedTrackTxtArea.append("\nRating: " + displayStars(LibraryData.getRating(selectedTrackNumber)));
+                selectedTrackTxtArea.append("\nPlay count: " + LibraryData.getPlayCount(selectedTrackNumber));
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreatePlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreatePlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreatePlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreatePlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+      
+    }//GEN-LAST:event_checkTrackBtnActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CreatePlaylist().setVisible(true);
+    private void addTrackToPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTrackToPlaylistActionPerformed
+        // TODO add your handling code here:
+        String selectedTrackNumber = trackNoTxtFld.getText();
+            
+            String name = LibraryData.getName(selectedTrackNumber);
+            //System.out.println(name);
+            if (name == null) {
+                //information.setText(" No such track number");
+                selectedTrackTxtArea.setText("No such track number");
+            } else {
+            
+                playlistTxtArea.append(name + " - " + LibraryData.getArtist(selectedTrackNumber));
+                playlistTxtArea.append("\nRating: " + displayStars(LibraryData.getRating(selectedTrackNumber)));
+                playlistTxtArea.append("\nPlay count: " + LibraryData.getPlayCount(selectedTrackNumber));
+                playlistTxtArea.append("\n - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - -  \n");
             }
-        });
-    }
+    }//GEN-LAST:event_addTrackToPlaylistActionPerformed
+
+    private void allTracksTextAreaComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_allTracksTextAreaComponentShown
+        // TODO add your handling code here:
+        //allTracksTextArea.setText("No tracks");
+    }//GEN-LAST:event_allTracksTextAreaComponentShown
+
+    private void clearPlaylistBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearPlaylistBtnActionPerformed
+        // TODO add your handling code here:
+        playlistTxtArea.setText("");
+        
+    }//GEN-LAST:event_clearPlaylistBtnActionPerformed
+
+    private String displayStars(int rating) {
+          String stars = "";
+          for (int i = 0; i < rating; ++i) {
+              stars += "*";
+          }
+          return stars;
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addTrackToPlaylist;
@@ -181,9 +224,9 @@ public class CreatePlaylist extends javax.swing.JFrame {
     private javax.swing.JButton exitPlaylistBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private java.awt.TextArea playlistTxtArea;
     private javax.swing.JButton removeSelectedTrackBtn;
-    private java.awt.TextField selectedTrackNumber;
-    private java.awt.List selectedTrackTxtArea;
-    private java.awt.TextArea textArea1;
+    private java.awt.TextArea selectedTrackTxtArea;
+    private java.awt.TextField trackNoTxtFld;
     // End of variables declaration//GEN-END:variables
 }

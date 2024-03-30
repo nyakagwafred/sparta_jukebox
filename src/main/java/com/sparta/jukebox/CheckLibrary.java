@@ -44,13 +44,13 @@ public class CheckLibrary extends JFrame implements ActionListener {
                 trackInformationTxtArea.setText("No such track number");
             } else {
                 trackInformationTxtArea.setText(name + " - " + LibraryData.getArtist(selectedTrackNumber));
-                trackInformationTxtArea.append("\nRating: " + stars(LibraryData.getRating(selectedTrackNumber)));
+                trackInformationTxtArea.append("\nRating: " + displayStars(LibraryData.getRating(selectedTrackNumber)));
                 trackInformationTxtArea.append("\nPlay count: " + LibraryData.getPlayCount(selectedTrackNumber));
             }
         }
     }
 
-    private String stars(int rating) {
+    private String displayStars(int rating) {
         String stars = "";
         for (int i = 0; i < rating; ++i) {
             stars += "*";

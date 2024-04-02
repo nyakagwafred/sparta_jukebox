@@ -257,6 +257,7 @@ public class CreatePlaylist extends javax.swing.JFrame {
   
     private void clearPlaylistBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearPlaylistBtnActionPerformed
         // TODO add your handling code here:
+        //String selectedTrackNumber = trackNoTxtFld.getText();
         ArtistPhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sparta/jukebox/images/jukebox_logo.png")));
         playlistTxtArea.setText("");
         

@@ -16,8 +16,7 @@ public class CheckLibrary extends JFrame implements ActionListener {
     
     String[] items = LibraryData.getAllArtists();
     JComboBox<String> comboBox = new JComboBox<>(items);
-    
-    
+   
     /**
      * CheckLibrary constructor
      */
@@ -85,7 +84,7 @@ public class CheckLibrary extends JFrame implements ActionListener {
         } else if(e.getSource() == comboBox){
             // Get the selected item from the combo box
             String selectedArtist = (String) comboBox.getSelectedItem();
-            trackInformationTxtArea.setText(LibraryData.getTracksByArtist("/com/sparta/jukebox/images/jukebox_logo.png"));
+            trackInformationTxtArea.setText(LibraryData.getTracksByArtist(selectedArtist));
             
         }
         else {

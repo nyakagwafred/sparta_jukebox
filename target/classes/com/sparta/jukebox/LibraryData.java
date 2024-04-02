@@ -102,6 +102,7 @@ public class LibraryData {
                 output += key + " " + item.name + " - " + item.artist + "\n";
             }
         }
+         System.out.println(artistName);
         return output;
     }
     

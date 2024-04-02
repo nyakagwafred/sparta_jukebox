@@ -26,35 +26,46 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="selectedTrackTxtArea" max="32767" attributes="0"/>
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="exitPlaylistBtn" min="-2" pref="166" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="playlistTxtArea" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="savePlaylist" min="-2" pref="132" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="playPlaylist2" min="-2" pref="127" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="playPlaylist1" min="-2" pref="127" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="exitPlaylistBtn" min="-2" pref="117" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="playlistTxtArea" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="addTrackToPlaylist" min="-2" pref="173" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="clearPlaylistBtn" min="-2" pref="166" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="removeSelectedTrackBtn" min="-2" pref="201" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="selectedTrackTxtArea" alignment="1" min="-2" pref="604" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="547" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
-                                      <Component id="trackNoTxtFld" min="-2" pref="37" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="checkTrackBtn" min="-2" pref="175" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="trackNoTxtFld" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="allTracksTextArea" alignment="0" pref="604" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="addTrackToPlaylist" min="-2" pref="173" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="removeSelectedTrackBtn" min="-2" pref="175" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="clearPlaylistBtn" min="-2" pref="166" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="allTracksTextArea" alignment="0" min="-2" pref="382" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="ArtistPhoto" min="-2" pref="187" max="-2" attributes="0"/>
+                          <Component id="checkTrackBtn" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="50" max="32767" attributes="0"/>
+              <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,28 +75,46 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="allTracksTextArea" min="-2" pref="174" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="checkTrackBtn" min="-2" pref="42" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="trackNoTxtFld" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel1" alignment="0" pref="32" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="allTracksTextArea" min="-2" pref="199" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="trackNoTxtFld" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="checkTrackBtn" min="-2" pref="42" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="selectedTrackTxtArea" min="-2" pref="105" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="addTrackToPlaylist" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Component id="removeSelectedTrackBtn" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Component id="clearPlaylistBtn" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="playlistTxtArea" min="-2" pref="167" max="-2" attributes="0"/>
+                              <EmptySpace pref="99" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="exitPlaylistBtn" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Component id="savePlaylist" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Component id="playPlaylist1" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Component id="playPlaylist2" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="ArtistPhoto" min="-2" pref="189" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="selectedTrackTxtArea" min="-2" pref="105" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="addTrackToPlaylist" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="removeSelectedTrackBtn" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="clearPlaylistBtn" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="playlistTxtArea" min="-2" pref="225" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              <Component id="exitPlaylistBtn" min="-2" pref="42" max="-2" attributes="0"/>
-              <EmptySpace pref="9" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -141,6 +170,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Remove Track"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeSelectedTrackBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="exitPlaylistBtn">
       <Properties>
@@ -151,6 +183,38 @@
       </Events>
     </Component>
     <Component class="java.awt.TextArea" name="selectedTrackTxtArea">
+    </Component>
+    <Component class="javax.swing.JButton" name="savePlaylist">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save Playlist"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="savePlaylistActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ArtistPhoto">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/com/sparta/jukebox/images/jukebox_logo.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="artist-photo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="playPlaylist1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Play Playlist"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playPlaylist1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="playPlaylist2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Load Playlist"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playPlaylist2ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

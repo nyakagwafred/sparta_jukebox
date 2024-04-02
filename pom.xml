@@ -11,5 +11,13 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>com.mycompany.mavenproject1.Mavenproject1</exec.mainClass>
     </properties>
-    <name>sparta_jukebox</name>
+    <build>
+    <resources>
+        <resource>
+            <directory>src/main/java</directory>
+        </resource>
+     </resources>
+    </build>
+    <name>coursework_jukebox</name>
+    
 </project>

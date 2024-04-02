@@ -11,10 +11,11 @@ package com.sparta.jukebox;
 public class UpdateLibrary extends javax.swing.JFrame {
 
     /**
-     * Creates new form UpdateLibrary
+     * UpdateLibrary constructor
      */
     public UpdateLibrary() {
         initComponents();
+        allTracksTextArea.setText(LibraryData.listAll());
     }
 
     /**
@@ -26,21 +27,88 @@ public class UpdateLibrary extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        allTracksTextArea = new java.awt.TextArea();
+        jLabel1 = new javax.swing.JLabel();
+        trackNoTxtFld = new java.awt.TextField();
+        exitPlaylistBtn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel2.setText("All Tracks");
+
+        allTracksTextArea.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                allTracksTextAreaComponentShown(evt);
+            }
+        });
+
+        jLabel1.setText("Enter Track Number to Rate:");
+
+        trackNoTxtFld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trackNoTxtFldActionPerformed(evt);
+            }
+        });
+
+        exitPlaylistBtn.setText("Exit");
+        exitPlaylistBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitPlaylistBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 723, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(trackNoTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)
+                        .addComponent(exitPlaylistBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2)
+                        .addComponent(allTracksTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(exitPlaylistBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(allTracksTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(trackNoTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void allTracksTextAreaComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_allTracksTextAreaComponentShown
+        // TODO add your handling code here:
+        //allTracksTextArea.setText("No tracks");
+    }//GEN-LAST:event_allTracksTextAreaComponentShown
+
+    private void trackNoTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trackNoTxtFldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_trackNoTxtFldActionPerformed
+
+    private void exitPlaylistBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitPlaylistBtnActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_exitPlaylistBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +146,10 @@ public class UpdateLibrary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.TextArea allTracksTextArea;
+    private javax.swing.JButton exitPlaylistBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private java.awt.TextField trackNoTxtFld;
     // End of variables declaration//GEN-END:variables
 }

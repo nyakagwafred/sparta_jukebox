@@ -43,7 +43,10 @@ public class Jukebox extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == checkBtn) {
             new CheckLibrary();
-        } 
+        } else if (e.getSource() == updateBtn){
+            UpdateLibrary Obj = new UpdateLibrary();
+            Obj.setVisible(true);
+        }
         else if (e.getSource() == playlistBtn) {
             //System.out.println(e.getSource());
             CreatePlaylist Obj = new CreatePlaylist();

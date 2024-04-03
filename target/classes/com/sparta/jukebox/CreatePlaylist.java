@@ -6,6 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*; 
 import java.io.*;
+import javax.sound.sampled.*;
 
 
 
@@ -295,12 +296,23 @@ public class CreatePlaylist extends javax.swing.JFrame {
 
     private void playPlaylist1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playPlaylist1ActionPerformed
         // TODO add your handling code here:
+        try {
+            //File soundFile = new File("/com/sparta/jukebox/images/sound.wav");
+            InputStream inputStream  = getClass().getResourceAsStream("/com/sparta/jukebox/images/sound.wav");
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(inputStream);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioIn);
+            clip.start();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
+            ex.printStackTrace();
+        }
+        //Get selected track number
         String playlistToPlay = playlistTxtArea.getText();
         if(playlistToPlay.isEmpty()){
             JOptionPane.showMessageDialog(null, "Playlist is empty!", "No playlist list", JOptionPane.ERROR_MESSAGE);
         } else {
             // Display the file content in a dialog box
-            JOptionPane.showMessageDialog(null, playlistToPlay.toString(), "Now playing the following tracks", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, playlistToPlay, "Now playing the following tracks", JOptionPane.INFORMATION_MESSAGE);
         }
         
     }//GEN-LAST:event_playPlaylist1ActionPerformed

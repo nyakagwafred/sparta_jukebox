@@ -102,9 +102,30 @@ public class LibraryData {
                 output += key + " " + item.name + " - " + item.artist + "\n";
             }
         }
-         System.out.println(artistName);
+ 
         return output;
     }
+     
+      public static String getTrackByTrackNumber(String selectedTrackNumber, int newRating) {
+        LibraryData.incrementPlayCount(selectedTrackNumber);
+        String output = "";
+        output += "Track: " + selectedTrackNumber;
+        output += "\nArtist: " + LibraryData.getArtist(selectedTrackNumber);
+        output += "\nSong: " + LibraryData.getName(selectedTrackNumber);
+        output += "\nNew Rating: " + displayStars(newRating);
+        output += "\nNew Play count: " + LibraryData.getPlayCount(selectedTrackNumber);  
+        return output;
+    }
+      
+      public static String displayStars(int rating) {
+          String stars = "";
+          for (int i = 0; i < rating; ++i) {
+              stars += "*";
+          }
+          return stars;
+      }
+     
+       
     
     public static String[] getAllArtists() {
         // HashSet to store unique values
@@ -128,8 +149,6 @@ public class LibraryData {
         
         // Convert the Set back to an array
         String[] allArtists = uniqueSet.toArray(new String[0]);
-
-        
         return allArtists;
     }
 

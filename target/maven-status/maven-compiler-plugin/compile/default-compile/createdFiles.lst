@@ -6,6 +6,7 @@ com/sparta/jukebox/UpdateLibrary.class
 com/sparta/jukebox/CheckLibrary.class
 com/sparta/jukebox/CreatePlaylist$4.class
 com/sparta/jukebox/LibraryData.class
+com/sparta/jukebox/UpdateLibrary$5.class
 com/sparta/jukebox/CreatePlaylist$6.class
 com/sparta/jukebox/Jukebox.class
 com/sparta/jukebox/CreatePlaylist$9.class
@@ -15,6 +16,7 @@ com/sparta/jukebox/UpdateLibrary$3.class
 com/sparta/jukebox/CreatePlaylist$10.class
 com/sparta/jukebox/CreatePlaylist.class
 com/sparta/jukebox/CreatePlaylist$7.class
+com/sparta/jukebox/UpdateLibrary$6.class
 com/sparta/jukebox/CreatePlaylist$5.class
 com/sparta/jukebox/UpdateLibrary$1.class
 com/sparta/jukebox/UpdateLibrary$4.class

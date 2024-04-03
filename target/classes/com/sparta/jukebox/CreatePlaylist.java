@@ -235,6 +235,7 @@ public class CreatePlaylist extends javax.swing.JFrame {
             // TODO add your handling code here:
             String selectedTrackNumber = trackNoTxtFld.getText();
             
+            LibraryData.incrementPlayCount(selectedTrackNumber);
             String name = LibraryData.getName(selectedTrackNumber);
             //System.out.println(name);
             if (name == null) {
@@ -325,7 +326,6 @@ public class CreatePlaylist extends javax.swing.JFrame {
                 return;
             }
             // Display the file playlistFromFile in a dialog box
-            //JOptionPane.showMessageDialog(null, playlistFromFile.toString(), "File Content", JOptionPane.INFORMATION_MESSAGE);
             playlistTxtArea.setText(playlistFromFile.toString());
         }     
         

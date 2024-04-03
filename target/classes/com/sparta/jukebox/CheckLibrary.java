@@ -78,7 +78,6 @@ public class CheckLibrary extends JFrame implements ActionListener {
         if (e.getSource() == listTracksBtn) {
             // Display all tracks in the JTextArea
             trackInformationTxtArea.setText(LibraryData.listAll());
-            //System.out.println(LibraryData.getAllArtists());
         } else if (e.getSource() == exitBtn){
              dispose(); 
         } else if(e.getSource() == comboBox){
